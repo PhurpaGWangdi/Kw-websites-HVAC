@@ -5,6 +5,46 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --brand: 160 84% 39%;
+    --brand-foreground: 160 84% 39%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 160 84% 39%;
+  }
+ 
+  .dark {
+    --brand: 160 84% 39%;
+    --brand-foreground: 160 84% 39%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 160 84% 39%;
+  }
+
   html {
     scroll-behavior: smooth;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
@@ -107,6 +147,25 @@
 }
 
 @layer utilities {
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  /* Hover effect for group */
+  .group:hover .group-hover\:translate-y-\[-2rem\] {
+    --tw-translate-y: -2rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
+      skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+      scaleY(var(--tw-scale-y));
+  }
+  
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+
   /* High contrast mode support */
   @media (prefers-contrast: high) {
     .text-slate-600 {

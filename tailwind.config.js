@@ -3,11 +3,43 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        brand: "hsl(var(--brand))",
+        "brand-foreground": "hsl(var(--brand-foreground))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+      },
+      maxWidth: {
+        container: "80rem",
+      },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         arabic: ['Noto Sans Arabic', 'system-ui', 'sans-serif'],
       },
-      colors: {
+      extend: {
         emerald: {
           50: '#ecfdf5',
           100: '#d1fae5',
@@ -41,6 +73,8 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'shimmer': 'shimmer 2s linear infinite',
+        appear: "appear 0.5s ease-out forwards",
+        "appear-zoom": "appear-zoom 0.5s ease-out forwards",
       },
       keyframes: {
         fadeIn: {
@@ -58,6 +92,14 @@ export default {
         shimmer: {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100%)' },
+        },
+        appear: {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "appear-zoom": {
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "100%": { opacity: "1", transform: "scale(1)" }
         },
       },
       backdropBlur: {
