@@ -10,7 +10,6 @@ import Areas from './components/Areas';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import BookingForm from './components/BookingForm';
-import HVACCTASection from './components/HVACCTASection';
 import Footer from './components/Footer';
 import MobileCTA from './components/MobileCTA';
 import SEO from './components/SEO';
@@ -30,7 +29,6 @@ function App() {
           <Testimonials />
           <FAQ />
           <BookingForm />
-          <HVACCTASection />
           <Footer />
           <MobileCTA />
         </div>
