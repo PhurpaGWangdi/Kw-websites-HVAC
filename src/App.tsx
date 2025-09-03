@@ -2,7 +2,7 @@ import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle } from 'lucide-react';
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { CONFIG } from './config/brand';
 import { digitsOnly } from './utils/helpers';
 import Navigation from './components/Navigation';
@@ -18,11 +18,11 @@ import Footer from './components/Footer';
 import MobileCTA from './components/MobileCTA';
 import SEO from './components/SEO';
 
-function App() {
+const AppContent: React.FC = () => {
+  const { language } = useLanguage();
+  
   return (
-    <HelmetProvider>
-      <LanguageProvider>
-        <div className="relative min-h-screen overflow-x-hidden text-slate-800 bg-[radial-gradient(1200px_600px_at_-10%_-20%,#ccfbf1_0%,transparent_60%),radial-gradient(800px_400px_at_110%_10%,#e0f2fe_0%,transparent_55%),linear-gradient(to_bottom,#ffffff,#f8fafc)]">
+        <div dir={language === "ar" ? "rtl" : "ltr"} className="relative min-h-screen overflow-x-hidden text-slate-800 bg-[radial-gradient(1200px_600px_at_-10%_-20%,#ccfbf1_0%,transparent_60%),radial-gradient(800px_400px_at_110%_10%,#e0f2fe_0%,transparent_55%),linear-gradient(to_bottom,#ffffff,#f8fafc)]">
           <SEO />
           <Navigation />
           <Hero />
@@ -55,6 +55,14 @@ function App() {
             </div>
           </motion.div>
         </div>
+  );
+};
+
+function App() {
+  return (
+    <HelmetProvider>
+      <LanguageProvider>
+        <AppContent />
       </LanguageProvider>
     </HelmetProvider>
   );
