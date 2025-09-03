@@ -8,8 +8,8 @@ const SEO: React.FC = () => {
 
   const seoData = {
     en: {
-      title: "AC Repair Kuwait | Same-Day HVAC Service | KwCool HVAC",
-      description: "Professional AC repair & maintenance in Kuwait. Licensed technicians, transparent pricing, same-day service. Call +965 5000 0000 for emergency HVAC repairs.",
+      title: "AC Repair Kuwait — Same-Day HVAC Service | KwCool",
+      description: "Licensed HVAC technicians in Kuwait. Fast 30–90 min response. Transparent pricing, warranty, and KNET accepted. Call or WhatsApp to book.",
       keywords: "AC repair Kuwait, HVAC service Kuwait, air conditioning repair, same day AC repair, Kuwait HVAC technician"
     },
     ar: {
