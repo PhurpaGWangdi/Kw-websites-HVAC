@@ -101,7 +101,7 @@ ${formData.notes || 'No additional notes'}`;
   ];
 
   return (
-    <section id="contact" className="py-20 bg-emerald-50">
+    <section id="contact" className="py-20 bg-emerald-50 scroll-mt-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ y: 50, opacity: 0 }}
