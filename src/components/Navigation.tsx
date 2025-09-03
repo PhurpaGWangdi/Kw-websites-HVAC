@@ -57,7 +57,7 @@ const Navigation: React.FC = () => {
               onClick={handleCall}
               className="flex items-center px-4 py-2 text-emerald-600 border border-emerald-600 
                          rounded-lg hover:bg-emerald-50 transition-colors duration-200
-                         focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2
+                         focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300
                          transition active:scale-95"
             >
               <Phone className="w-4 h-4 mr-2" />
@@ -67,7 +67,7 @@ const Navigation: React.FC = () => {
               onClick={handleWhatsApp}
               className="flex items-center px-4 py-2 bg-emerald-600 text-white 
                          rounded-lg hover:bg-emerald-700 transition-colors duration-200
-                         focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2
+                         focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300
                          transition active:scale-95"
             >
               <MessageCircle className="w-4 h-4 mr-2" />

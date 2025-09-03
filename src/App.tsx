@@ -64,8 +64,8 @@ const AppContent: React.FC = () => {
                 <div className="text-slate-500">Sat–Thu 8:00–20:00</div>
               </div>
               <div className="flex gap-2">
-                <a href={`tel:${CONFIG.brand.phone}`} className="inline-flex items-center gap-1 bg-emerald-600 text-white px-3 py-2 rounded-full shadow"><Phone size={16}/> Call</a>
-                <a href={`https://wa.me/${digitsOnly(CONFIG.brand.whatsapp)}?text=${encodeURIComponent('Hi, I need AC service.')}`} className="inline-flex items-center gap-1 border px-3 py-2 rounded-full shadow"><MessageCircle size={16}/> WA</a>
+                <a href={`tel:${CONFIG.brand.phone}`} className="inline-flex items-center gap-1 bg-emerald-600 text-white px-3 py-2 rounded-full shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"><Phone size={16}/> Call</a>
+                <a href={`https://wa.me/${digitsOnly(CONFIG.brand.whatsapp)}?text=${encodeURIComponent('Hi, I need AC service.')}`} className="inline-flex items-center gap-1 border px-3 py-2 rounded-full shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"><MessageCircle size={16}/> WA</a>
               </div>
             </div>
           </motion.div>

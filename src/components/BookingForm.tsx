@@ -298,7 +298,7 @@ ${formData.notes || 'No additional notes'}`;
                        text-white rounded-xl hover:bg-emerald-700 disabled:bg-emerald-400
                        transition-all duration-200 text-lg font-semibold shadow-lg 
                        hover:shadow-xl transform hover:-translate-y-1 disabled:transform-none
-                       focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2
+                       focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300
                        transition active:scale-95"
             >
               {isSubmitting ? (
