@@ -53,7 +53,7 @@ const Pricing: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className={`grid md:grid-cols-3 gap-8 mb-8 ${language === 'ar' ? 'text-right' : ''}`}>
           {pricingTiers.map((tier, index) => (
             <motion.div
               key={index}

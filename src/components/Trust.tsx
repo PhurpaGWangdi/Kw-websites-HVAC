@@ -22,7 +22,7 @@ const Trust: React.FC = () => {
             {copy.trustTitle}
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-6 ${language === 'ar' ? 'text-right' : ''}`}>
             {copy.trustItems.map((item, index) => (
               <motion.div
                 key={index}

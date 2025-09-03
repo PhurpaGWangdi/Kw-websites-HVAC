@@ -53,7 +53,7 @@ const Services: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 ${language === 'ar' ? 'text-right' : ''}`}>
           {services.map((service, index) => (
             <motion.div
               key={index}
