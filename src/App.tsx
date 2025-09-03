@@ -36,6 +36,21 @@ const AppContent: React.FC = () => {
           <Footer />
           <MobileCTA />
           
+          {/* SEO: LocalBusiness */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              "@context":"https://schema.org",
+              "@type":"HVACBusiness",
+              name: language==='en'? CONFIG.brand.nameEn : CONFIG.brand.nameAr,
+              telephone: CONFIG.brand.phone,
+              email: CONFIG.brand.email,
+              areaServed: CONFIG.serviceAreas,
+              openingHours: CONFIG.businessHours,
+              sameAs: [`https://wa.me/${digitsOnly(CONFIG.brand.whatsapp)}`]
+            }) }}
+          />
+
           {/* Sticky CTA (mobile) */}
           <motion.div
             initial={{ y: 40, opacity: 0 }} 
