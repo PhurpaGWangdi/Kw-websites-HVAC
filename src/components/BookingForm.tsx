@@ -138,7 +138,7 @@ ${formData.notes || 'No additional notes'}`;
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className={`grid md:grid-cols-2 gap-6 ${language === 'ar' ? 'text-right' : ''}`}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   {copy.formName} *
@@ -175,7 +175,7 @@ ${formData.notes || 'No additional notes'}`;
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className={`grid md:grid-cols-2 gap-6 ${language === 'ar' ? 'text-right' : ''}`}>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                   {copy.formEmail}
@@ -215,7 +215,7 @@ ${formData.notes || 'No additional notes'}`;
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className={`grid md:grid-cols-2 gap-6 ${language === 'ar' ? 'text-right' : ''}`}>
               <div>
                 <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
                   {copy.formService}
