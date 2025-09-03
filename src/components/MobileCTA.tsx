@@ -36,8 +36,8 @@ const MobileCTA: React.FC = () => {
             onClick={handleCall}
             className="flex items-center justify-center px-4 py-3 bg-emerald-600 text-white 
                      rounded-xl font-semibold transition-colors duration-200 active:bg-emerald-700
-                     focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-                     transition active:scale-95"
+                     focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2
+                     active:scale-95"
           >
             <Phone className="w-5 h-5 mr-2" />
             {copy.callNow}
@@ -47,8 +47,7 @@ const MobileCTA: React.FC = () => {
             className="flex items-center justify-center px-4 py-3 border-2 border-emerald-600 
                      text-emerald-600 rounded-xl font-semibold transition-colors duration-200 
                      active:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 
-                     focus:ring-offset-2"
-                     transition active:scale-95"
+                     focus:ring-offset-2 active:scale-95"
           >
             <MessageCircle className="w-5 h-5 mr-2" />
             {copy.whatsappNow}
