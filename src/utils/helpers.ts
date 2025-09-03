@@ -1,6 +1,4 @@
-export const digitsOnly = (str: string): string => {
-  return str.replace(/\D/g, '');
-};
+export const digitsOnly = (s) => (s || "").replace(/\D/g, "");
 
 export const getUtmParams = (): Record<string, string> => {
   const params = new URLSearchParams(window.location.search);
