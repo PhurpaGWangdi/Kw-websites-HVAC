@@ -10,16 +10,19 @@ const Testimonials: React.FC = () => {
 
   const testimonials = [
     {
-      text: copy.testimonial1,
-      author: copy.testimonial1Author
+      quote: copy.testimonial1,
+      name: "Maha A.",
+      area: "Salmiya"
     },
     {
-      text: copy.testimonial2,
-      author: copy.testimonial2Author
+      quote: copy.testimonial2,
+      name: "Yousef K.",
+      area: "Hawally"
     },
     {
-      text: copy.testimonial3,
-      author: copy.testimonial3Author
+      quote: copy.testimonial3,
+      name: "Noura S.",
+      area: "Fintas"
     }
   ];
 
@@ -38,36 +41,23 @@ const Testimonials: React.FC = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200
-                         transition-all duration-300
-                         hover:-translate-y-1 hover:shadow-xl hover:ring-1 hover:ring-emerald-300"
-            >
-              {/* Stars */}
-              <div className={`flex mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                ))}
+        <div className="relative overflow-hidden">
+          <motion.div
+            className="flex gap-4 mt-6"
+            initial={{ x: 0 }}
+            animate={{ x: [0, -320, 0] }}
+            transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
+          >
+            {[...testimonials, ...testimonials].map((c, i) => (
+              <div key={i} className="min-w-[300px] rounded-2xl p-5 border bg-white shadow-sm">
+                <div className="flex items-center gap-1 text-amber-500">
+                  {[...Array(5)].map((_, j) => <Star key={j} size={16} fill="currentColor"/>)}
+                </div>
+                <p className="mt-3 text-slate-700">"{c.quote}"</p>
+                <div className="mt-3 text-sm text-emerald-700 font-semibold">{c.name} ({c.area})</div>
               </div>
-              
-              {/* Quote */}
-              <blockquote className={`text-gray-700 mb-6 leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
-                "{testimonial.text}"
-              </blockquote>
-              
-              {/* Author */}
-              <cite className={`text-emerald-600 font-semibold not-italic ${isRTL ? 'text-right' : 'text-left'}`}>
-                {testimonial.author}
-              </cite>
-            </motion.div>
-          ))}
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
