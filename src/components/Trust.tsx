@@ -30,7 +30,9 @@ const Trust: React.FC = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                className={`flex items-center p-4 bg-white rounded-xl shadow-sm 
+                className={`flex items-center p-4 bg-white rounded-xl shadow-sm
+                           transition-all duration-300
+                           hover:-translate-y-1 hover:shadow-xl hover:ring-1 hover:ring-emerald-300
                            ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}
               >
                 <CheckCircle className="w-6 h-6 text-emerald-500 mr-3 flex-shrink-0" />

@@ -35,6 +35,8 @@ const Areas: React.FC = () => {
               transition={{ delay: index * 0.05, duration: 0.4 }}
               viewport={{ once: true }}
               className={`flex items-center p-4 bg-emerald-50 rounded-xl border border-emerald-100
+                         transition-all duration-300
+                         hover:-translate-y-1 hover:shadow-xl hover:ring-1 hover:ring-emerald-300
                          ${isRTL ? 'flex-row-reverse text-right' : ''}`}
             >
               <MapPin className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" />

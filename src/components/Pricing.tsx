@@ -61,8 +61,9 @@ const Pricing: React.FC = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 
-                         hover:shadow-xl transition-all duration-300 text-center"
+              className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 
+                         transition-all duration-300 text-center
+                         hover:-translate-y-1 hover:shadow-xl hover:ring-1 hover:ring-emerald-300"
             >
               <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl 
                               ${tier.bgColor} mb-6`}>

@@ -62,7 +62,8 @@ const Services: React.FC = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
               className="group p-6 bg-white rounded-2xl border border-gray-200 hover:border-emerald-200 
-                         hover:shadow-lg transition-all duration-300 text-center"
+                         shadow-sm transition-all duration-300 text-center
+                         hover:-translate-y-1 hover:shadow-xl hover:ring-1 hover:ring-emerald-300"
             >
               <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl 
                               bg-gray-50 group-hover:bg-emerald-50 transition-colors duration-300 mb-4`}>

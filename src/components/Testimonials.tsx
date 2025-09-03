@@ -46,7 +46,9 @@ const Testimonials: React.FC = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+              className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200
+                         transition-all duration-300
+                         hover:-translate-y-1 hover:shadow-xl hover:ring-1 hover:ring-emerald-300"
             >
               {/* Stars */}
               <div className={`flex mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
