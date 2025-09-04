@@ -153,14 +153,24 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8 }}
             className={`${isRTL ? 'lg:order-1' : ''} flex justify-center`}
           >
-            <div className="relative">
-              <div className="w-80 h-80 bg-gradient-to-br from-emerald-400 to-emerald-600 
-                              rounded-full opacity-10 absolute -top-10 -left-10" />
-              <div className="w-64 h-64 bg-gradient-to-br from-emerald-500 to-emerald-700 
-                              rounded-2xl shadow-2xl flex items-center justify-center relative z-10">
-                <div className="text-6xl">❄️</div>
-              </div>
-            </div>
+            <motion.div initial={{opacity:0, scale:0.96}} animate={{opacity:1, scale:1}} transition={{duration:0.8}} className="relative">
+              {CONFIG.splineScene ? (
+                // 3D Spline hero
+                <div className="aspect-[4/3]">
+                  <SplineEmbed scene={CONFIG.splineScene} className="h-full w-full" />
+                </div>
+              ) : (
+                // Fallback: feature cards
+                <div className="aspect-[4/3] rounded-[32px] bg-white/60 backdrop-blur p-2 shadow-2xl ring-1 ring-black/5">
+                  <div className="h-full w-full rounded-[28px] bg-gradient-to-br from-sky-50 to-emerald-50 grid grid-cols-2 gap-2 p-3">
+                    <FeatureCard icon="❄️" title={copy.serviceCooling} desc={copy.serviceCoolingDesc}/>
+                    <FeatureCard icon="🔥" title={copy.serviceHeating} desc={copy.serviceHeatingDesc}/>
+                    <FeatureCard icon="⚙️" title={copy.serviceMaintenance} desc={copy.serviceMaintenanceDesc}/>
+                    <FeatureCard icon="🏢" title={copy.serviceCommercial} desc={copy.serviceCommercialDesc}/>
+                  </div>
+                </div>
+              )}
+            </motion.div>
           </motion.div>
         </div>
       </div>
