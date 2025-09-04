@@ -40,11 +40,11 @@ function FeatureCard({ icon, title, desc, image }) {
 }
 
 const IMAGES = {
-  hero: "https://images.pexels.com/photos/5691651/pexels-photo-5691651.jpeg",
-  cooling: "https://images.pexels.com/photos/2078768/pexels-photo-2078768.jpeg",
-  heating: "https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg",
-  maintenance: "https://images.pexels.com/photos/5691569/pexels-photo-5691569.jpeg",
-  commercial: "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg",
+  hero: "/images/hero.jpg",
+  cooling: "/images/cooling.jpg",
+  heating: "/images/heating.jpg",
+  maintenance: "/images/maintenance.jpg",
+  commercial: "/images/commercial.jpg",
 };
 
 const Services: React.FC = () => {
