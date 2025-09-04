@@ -194,34 +194,14 @@ const Hero: React.FC = () => {
                   <SplineEmbed scene={CONFIG.splineScene} className="h-full w-full" />
                 </div>
               ) : (
-                // Fallback: service feature cards
-                <div className="aspect-[4/3] rounded-[32px] bg-white/60 backdrop-blur p-2 shadow-2xl ring-1 ring-black/5">
-                  <div className="h-full w-full rounded-[28px] bg-gradient-to-br from-sky-50 to-emerald-50 grid grid-cols-2 gap-2 p-3">
-                    <FeatureCard
-                      icon={<Snowflake/>}
-                      title={copy.serviceCooling}
-                      desc={copy.serviceCoolingDesc}
-                      image={IMAGES.cooling}
-                    />
-                    <FeatureCard
-                      icon={<Flame/>}
-                      title={copy.serviceHeating}
-                      desc={copy.serviceHeatingDesc}
-                      image={IMAGES.heating}
-                    />
-                    <FeatureCard
-                      icon={<Fan/>}
-                      title={copy.serviceMaintenance}
-                      desc={copy.serviceMaintenanceDesc}
-                      image={IMAGES.maintenance}
-                    />
-                    <FeatureCard
-                      icon={<Building2/>}
-                      title={copy.serviceCommercial}
-                      desc={copy.serviceCommercialDesc}
-                      image={IMAGES.commercial}
-                    />
-                  </div>
+                // Fallback: single hero image
+                <div className="aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl ring-1 ring-black/5">
+                  <img
+                    src={IMAGES.hero}
+                    alt="HVAC technician in Kuwait"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
               )}
             </motion.div>
