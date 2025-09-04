@@ -187,13 +187,13 @@ const Hero: React.FC = () => {
                       icon={<Snowflake/>}
                       title={copy.serviceCooling}
                       desc={copy.serviceCoolingDesc}
-                      image="/images/cooling-unit.jpg"
+                     image="/images/cooling-unit.jpg (outdoor AC unit close-up).jpg"
                     />
                     <FeatureCard
                       icon={<Flame/>}
                       title={copy.serviceHeating}
                       desc={copy.serviceHeatingDesc}
-                      image="/images/hvac-tech.jpg"
+                     image="/images/hvac-tech.jpg (technician repairing AC)4.jpg"
                     />
                     <FeatureCard
                       icon={<Fan/>}
