@@ -18,6 +18,10 @@ export const CONFIG = {
     "Mangaf"
   ],
   businessHours: "Sat–Thu 8:00–20:00",
+
+  // Optional: paste your Spline scene URL to enable 3D hero
+  // Example template scene (replace with your own for production):
+  splineScene: "https://prod.spline.design/your-scene-id/scene.splinecode",
   webhookUrl: "https://hooks.make.com/REPLACE_ME"
 };
 
