@@ -85,6 +85,11 @@ const Services: React.FC = () => {
   return (
     <section id="services" className="py-20 bg-white scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* DEBUG: remove later */}
+        <pre className="text-[10px] text-slate-500">
+          {JSON.stringify(IMAGES, null, 2)}
+        </pre>
+        
         <motion.div 
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
