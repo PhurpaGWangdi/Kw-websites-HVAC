@@ -241,16 +241,20 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8 }}
             className={`${isRTL ? 'lg:order-1' : ''} flex justify-center`}
           >
-            <motion.div initial={{opacity:0, scale:0.96}} animate={{opacity:1, scale:1}} transition={{duration:0.8}} className="relative">
-              {CONFIG.splineScene ? (
-                // 3D Spline hero
-                <div className="aspect-[4/3]">
-                  <SplineEmbed scene={CONFIG.splineScene} className="h-full w-full" />
-                </div>
-              ) : (
-                // Automatic slideshow of HVAC images
-                <ImageSlideshow />
-              )}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl ring-1 ring-black/5">
+                <img
+                  src="/images/hero.jpg"
+                  alt="HVAC technician repairing AC"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+              </div>
             </motion.div>
           </motion.div>
         </div>
