@@ -32,6 +32,16 @@ function SplineEmbed({ scene, className = "" }) {
   );
 }
 
+function FeatureCard({ icon, title, desc }) {
+  return (
+    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+      <div className="text-2xl mb-2">{icon}</div>
+      <h3 className="font-semibold text-gray-800 text-sm mb-1">{title}</h3>
+      <p className="text-gray-600 text-xs leading-relaxed">{desc}</p>
+    </div>
+  );
+}
+
 const Hero: React.FC = () => {
   const { language, isRTL } = useLanguage();
   const copy = COPY[language];
