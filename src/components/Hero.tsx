@@ -194,15 +194,8 @@ const Hero: React.FC = () => {
                   <SplineEmbed scene={CONFIG.splineScene} className="h-full w-full" />
                 </div>
               ) : (
-                // Fallback: single hero image
-                <div className="aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl ring-1 ring-black/5">
-                  <img
-                    src={IMAGES.hero}
-                    alt="HVAC technician in Kuwait"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
+                // Automatic slideshow of HVAC images
+                <ImageSlideshow />
               )}
             </motion.div>
           </motion.div>
