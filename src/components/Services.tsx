@@ -38,13 +38,6 @@ const IMAGES = {
   commercial: "/images/commercial.jpg",
 };
 
-const AVATARS = {
-  maha: "/avatars/maha.jpg",
-  yousef: "/avatars/yousef.jpg",
-  noura: "/avatars/noura.jpg",
-  ahmad: "/avatars/ahmad.jpg",
-};
-
 const Services: React.FC = () => {
   const { language, isRTL } = useLanguage();
   const copy = COPY[language];

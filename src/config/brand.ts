@@ -1,4 +1,11 @@
 // Brand configuration and constants
+export const AVATARS = {
+  maha: "/avatars/maha.jpg",
+  yousef: "/avatars/yousef.jpg",
+  noura: "/avatars/noura.jpg",
+  ahmad: "/avatars/ahmad.jpg",
+};
+
 export const CONFIG = {
   brand: {
     nameEn: "KwCool HVAC",
@@ -106,12 +113,12 @@ export const COPY = {
     
     // Testimonials
     testimonialsTitle: "What Our Customers Say",
-    testimonial1: "Arrived in 45 minutes and fixed the leak. Transparent price, no surprises.",
-    testimonial1Author: "Maha A. (Salmiya)",
-    testimonial2: "Coils cleaned and the airflow is like new. Technician was polite and tidy.",
-    testimonial2Author: "Yousef K. (Hawally)", 
-    testimonial3: "AC stopped at night—emergency team got us sleeping cool again.",
-    testimonial3Author: "Noura S. (Fintas)",
+    testimonials: [
+      { name: "Yousef K.", area: "Hawally", quote: "Coils cleaned and the airflow is like new. Technician was polite and tidy.", avatar: AVATARS.yousef },
+      { name: "Noura S.", area: "Fintas", quote: "AC stopped at night—emergency team got us sleeping cool again.", avatar: AVATARS.noura },
+      { name: "Maha A.", area: "Salmiya", quote: "Arrived in 45 minutes and fixed the leak. Transparent price, no surprises.", avatar: AVATARS.maha },
+      { name: "Ahmad R.", area: "Farwaniya", quote: "Professional crew. Explained the issue and gave a fair quote.", avatar: AVATARS.ahmad },
+    ],
     
     // FAQ
     faqTitle: "Frequently Asked Questions",
@@ -209,12 +216,12 @@ export const COPY = {
     
     // Testimonials
     testimonialsTitle: "ماذا يقول عملاؤنا",
-    testimonial1: "وصل في 45 دقيقة وأصلح التسريب. سعر واضح، بدون مفاجآت.",
-    testimonial1Author: "مها أ. (السالمية)",
-    testimonial2: "نظف المكثفات وتدفق الهواء أصبح كالجديد. الفني مهذب ومرتب.",
-    testimonial2Author: "يوسف ك. (حولي)",
-    testimonial3: "التكييف توقف ليلاً—فريق الطوارئ جعلنا ننام بارداً مرة أخرى.",
-    testimonial3Author: "نورا س. (الفنطاس)",
+    testimonials: [
+      { name: "يوسف ك.", area: "حولي", quote: "نظف المكثفات وتدفق الهواء أصبح كالجديد. الفني مهذب ومرتب.", avatar: AVATARS.yousef },
+      { name: "نورا س.", area: "الفنطاس", quote: "التكييف توقف ليلاً—فريق الطوارئ جعلنا ننام بارداً مرة أخرى.", avatar: AVATARS.noura },
+      { name: "مها أ.", area: "السالمية", quote: "وصل في 45 دقيقة وأصلح التسريب. سعر واضح، بدون مفاجآت.", avatar: AVATARS.maha },
+      { name: "أحمد ر.", area: "الفروانية", quote: "طاقم محترف. شرح المشكلة وأعطى سعر عادل.", avatar: AVATARS.ahmad },
+    ],
     
     // FAQ
     faqTitle: "الأسئلة الشائعة",
