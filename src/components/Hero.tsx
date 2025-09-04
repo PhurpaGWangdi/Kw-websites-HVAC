@@ -5,6 +5,15 @@ import { useLanguage } from '../context/LanguageContext';
 import { CONFIG, COPY } from '../config/brand';
 import { digitsOnly, logEvent, cn } from '../utils/helpers';
 
+// Central image map (avoids path typos)
+const IMAGES = {
+  hero: "/images/hero-tech.jpg",
+  cooling: "/images/cooling.jpg",
+  heating: "/images/heating.jpg",
+  maintenance: "/images/maintenance.jpg",
+  commercial: "/images/commercial.jpg",
+};
+
 function SplineEmbed({ scene, className = "" }) {
   // load the web component script once
   React.useEffect(() => {
