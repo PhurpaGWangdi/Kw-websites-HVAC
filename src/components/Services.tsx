@@ -2,7 +2,15 @@ import React from 'react';
 import { Snowflake, Flame, Fan, Building2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { COPY } from '../config/brand';
+import { CONFIG, COPY } from '../config/brand';
+
+const IMAGES = {
+  hero: "/images/hero.jpg",
+  cooling: "/images/cooling.jpg",
+  heating: "/images/heating.jpg",
+  maintenance: "/images/maintenance.jpg",
+  commercial: "/images/commercial.jpg",
+};
 
 const Services: React.FC = () => {
   const { language, isRTL } = useLanguage();
@@ -13,25 +21,29 @@ const Services: React.FC = () => {
       icon: Snowflake,
       title: copy.serviceCooling,
       description: copy.serviceCoolingDesc,
-      color: 'text-blue-500'
+      color: 'text-blue-500',
+      image: IMAGES.cooling
     },
     {
       icon: Flame,
       title: copy.serviceHeating,
       description: copy.serviceHeatingDesc,
-      color: 'text-orange-500'
+      color: 'text-orange-500',
+      image: IMAGES.heating
     },
     {
       icon: Fan,
       title: copy.serviceMaintenance,
       description: copy.serviceMaintenanceDesc,
-      color: 'text-emerald-500'
+      color: 'text-emerald-500',
+      image: IMAGES.maintenance
     },
     {
       icon: Building2,
       title: copy.serviceCommercial,
       description: copy.serviceCommercialDesc,
-      color: 'text-purple-500'
+      color: 'text-purple-500',
+      image: IMAGES.commercial
     }
   ];
 
@@ -75,6 +87,14 @@ const Services: React.FC = () => {
               <p className="text-gray-600 leading-relaxed">
                 {service.description}
               </p>
+              <div className="mt-4 w-full h-28 rounded-xl overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  loading="lazy" 
+                  className="w-full h-full object-cover" 
+                />
+              </div>
             </motion.div>
           ))}
         </div>
