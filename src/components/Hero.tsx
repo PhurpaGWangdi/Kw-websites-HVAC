@@ -170,14 +170,14 @@ const Hero: React.FC = () => {
                   <SplineEmbed scene={CONFIG.splineScene} className="h-full w-full" />
                 </div>
               ) : (
-                // Fallback: feature cards
-                <div className="aspect-[4/3] rounded-[32px] bg-white/60 backdrop-blur p-2 shadow-2xl ring-1 ring-black/5">
-                  <div className="h-full w-full rounded-[28px] bg-gradient-to-br from-sky-50 to-emerald-50 grid grid-cols-2 gap-2 p-3">
-                    <FeatureCard icon="❄️" title={copy.serviceCooling} desc={copy.serviceCoolingDesc}/>
-                    <FeatureCard icon="🔥" title={copy.serviceHeating} desc={copy.serviceHeatingDesc}/>
-                    <FeatureCard icon="⚙️" title={copy.serviceMaintenance} desc={copy.serviceMaintenanceDesc}/>
-                    <FeatureCard icon="🏢" title={copy.serviceCommercial} desc={copy.serviceCommercialDesc}/>
-                  </div>
+                // Fallback: technician photo
+                <div className="aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl ring-1 ring-black/5">
+                  <img
+                    src="/images/hvac-tech.jpg"
+                    alt="HVAC technician working on AC"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
               )}
             </motion.div>
