@@ -4,6 +4,41 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { CONFIG, COPY } from '../config/brand';
 
+function FeatureCard({ icon, title, desc, image }) {
+  return (
+    <motion.div
+      whileHover={{ y: -4, scale: 1.02 }}
+      className="p-5 border rounded-3xl bg-white/70 backdrop-blur shadow-sm hover:shadow-xl transition"
+    >
+      <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-emerald-50 to-sky-50 flex items-center justify-center text-emerald-700 shadow-inner border">
+        {icon}
+      </div>
+      <h4 className="mt-4 font-semibold text-lg tracking-tight">{title}</h4>
+      <p className="text-sm text-slate-600 mt-1 leading-relaxed">{desc}</p>
+
+      {image && (
+        <div className="mt-3 w-full h-28 rounded-xl overflow-hidden">
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              // fallback if path wrong
+              e.currentTarget.src = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(
+                `<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'>
+                   <rect width='100%' height='100%' fill='#f1f5f9'/>
+                   <text x='50%' y='50%' font-size='16' text-anchor='middle' fill='#64748b'>Image not found</text>
+                 </svg>`
+              );
+            }}
+          />
+        </div>
+      )}
+    </motion.div>
+  );
+}
+
 const IMAGES = {
   hero: "https://images.pexels.com/photos/5691651/pexels-photo-5691651.jpeg",
   cooling: "https://images.pexels.com/photos/2078768/pexels-photo-2078768.jpeg",
@@ -73,28 +108,13 @@ const Services: React.FC = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
-              className="group p-6 bg-white rounded-2xl border border-gray-200 hover:border-emerald-200 
-                         shadow-sm transition-all duration-300 text-center
-                         hover:-translate-y-1 hover:shadow-xl hover:ring-1 hover:ring-emerald-300"
             >
-              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl 
-                              bg-gray-50 group-hover:bg-emerald-50 transition-colors duration-300 mb-4`}>
-                <service.icon className={`w-8 h-8 ${service.color}`} />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {service.description}
-              </p>
-              <div className="mt-4 w-full h-28 rounded-xl overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  loading="lazy" 
-                  className="w-full h-full object-cover" 
-                />
-              </div>
+              <FeatureCard 
+                icon={<service.icon className={`w-8 h-8 ${service.color}`} />}
+                title={service.title}
+                desc={service.description}
+                image={service.image}
+              />
             </motion.div>
           ))}
         </div>
