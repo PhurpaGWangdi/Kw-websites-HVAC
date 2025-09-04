@@ -14,15 +14,6 @@ const IMAGES = {
   commercial: "/images/commercial.jpg",
 };
 
-// Central image map (avoids path typos)
-const IMAGES = {
-  hero: "/images/hero.jpg",
-  cooling: "/images/cooling.jpg",
-  heating: "/images/heating.jpg",
-  maintenance: "/images/maintenance.jpg",
-  commercial: "/images/commercial.jpg",
-};
-
 function SplineEmbed({ scene, className = "" }) {
   // load the web component script once
   React.useEffect(() => {
