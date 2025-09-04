@@ -3,7 +3,34 @@ import { Phone, MessageCircle, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { CONFIG, COPY } from '../config/brand';
-import { digitsOnly, logEvent } from '../utils/helpers';
+import { digitsOnly, logEvent, cn } from '../utils/helpers';
+
+function SplineEmbed({ scene, className = "" }) {
+  // load the web component script once
+  React.useEffect(() => {
+    const id = "spline-viewer-script";
+    if (!document.getElementById(id)) {
+      const s = document.createElement("script");
+      s.id = id;
+      s.type = "module";
+      s.src = "https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js";
+      document.head.appendChild(s);
+    }
+  }, []);
+  if (!scene) return null;
+  return (
+    <div className={cn("rounded-[32px] shadow-2xl ring-1 ring-black/5 overflow-hidden bg-white/60 backdrop-blur", className)}>
+      {/* @ts-ignore: custom element */}
+      <spline-viewer
+        loading="lazy"
+        style={{ width: "100%", height: "100%", display: "block" }}
+        url={scene}
+        ar
+        orbit
+      />
+    </div>
+  );
+}
 
 const Hero: React.FC = () => {
   const { language, isRTL } = useLanguage();

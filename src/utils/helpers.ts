@@ -1,5 +1,7 @@
 export const digitsOnly = (s) => (s || "").replace(/\D/g, "");
 
+export const cn = (...classes) => classes.filter(Boolean).join(" ");
+
 export const getUtmParams = (): Record<string, string> => {
   const params = new URLSearchParams(window.location.search);
   const utmParams: Record<string, string> = {};
