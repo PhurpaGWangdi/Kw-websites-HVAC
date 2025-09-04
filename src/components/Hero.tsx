@@ -52,13 +52,23 @@ function FeatureCard({ icon, title, desc, image }) {
       </div>
       <h4 className="mt-4 font-semibold text-lg tracking-tight">{title}</h4>
       <p className="text-sm text-slate-600 mt-1 leading-relaxed">{desc}</p>
+
       {image && (
         <div className="mt-3 w-full h-28 rounded-xl overflow-hidden">
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover"
             loading="lazy"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              // fallback if path wrong
+              e.currentTarget.src = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(
+                `<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'>
+                   <rect width='100%' height='100%' fill='#f1f5f9'/>
+                   <text x='50%' y='50%' font-size='16' text-anchor='middle' fill='#64748b'>Image not found</text>
+                 </svg>`
+              );
+            }}
           />
         </div>
       )}
