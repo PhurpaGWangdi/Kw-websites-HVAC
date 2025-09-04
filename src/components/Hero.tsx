@@ -34,17 +34,17 @@ function SplineEmbed({ scene, className = "" }) {
 
 function FeatureCard({icon, title, desc, image}){
   return (
-    <motion.div whileHover={{y:-4, scale:1.02}} className="p-5 border rounded-3xl bg-white/70 backdrop-blur shadow-sm hover:shadow-xl transition">
+    <motion.div whileHover={{y:-4, scale:1.02}} className="p-4 border rounded-2xl bg-white/70 backdrop-blur shadow-sm hover:shadow-xl transition overflow-hidden">
       <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-emerald-50 to-sky-50 flex items-center justify-center text-emerald-700 shadow-inner border">
         {icon}
       </div>
-      <h4 className="mt-4 font-semibold text-lg tracking-tight">{title}</h4>
-      <p className="text-sm text-slate-600 mt-1 leading-relaxed">{desc}</p>
+      <h4 className="mt-3 font-semibold text-sm tracking-tight">{title}</h4>
+      <p className="text-xs text-slate-600 mt-1 leading-relaxed line-clamp-2">{desc}</p>
       {image && (
         <img
           src={image}
           alt={title}
-          className="mt-3 w-full h-28 object-cover rounded-xl"
+          className="mt-2 w-full h-16 object-cover rounded-lg"
           loading="lazy"
         />
       )}
