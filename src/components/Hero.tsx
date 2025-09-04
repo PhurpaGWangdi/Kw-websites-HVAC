@@ -7,11 +7,11 @@ import { digitsOnly, logEvent, cn } from '../utils/helpers';
 
 // Central image map (avoids path typos)
 const IMAGES = {
-  hero: "/images/hero-tech.jpg",
-  cooling: "/images/cooling.jpg",
-  heating: "/images/heating.jpg",
-  maintenance: "/images/maintenance.jpg",
-  commercial: "/images/commercial.jpg",
+  hero: "/images/hvac-tech.jpg (technician repairing AC)2.jpg",
+  cooling: "/images/cooling.jpg (outdoor AC unit close-up).jpg",
+  heating: "/images/hvac-tech.jpg (technician repairing AC)3.jpg",
+  maintenance: "/images/hvac-tech.jpg (technician repairing AC)4.jpg",
+  commercial: "/images/cooling.jpg (outdoor AC unit close-up)2.jpg",
 };
 
 function SplineEmbed({ scene, className = "" }) {
