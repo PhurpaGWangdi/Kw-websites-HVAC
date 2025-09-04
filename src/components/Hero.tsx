@@ -66,6 +66,50 @@ function FeatureCard({ icon, title, desc, image }) {
   );
 }
 
+function ImageSlideshow() {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const images = Object.values(IMAGES);
+  
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000);
+    
+    return () => clearInterval(timer);
+  }, [images.length]);
+  
+  return (
+    <div className="aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl ring-1 ring-black/5 relative">
+      {images.map((image, index) => (
+        <motion.img
+          key={image}
+          src={image}
+          alt="HVAC services in Kuwait"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: index === currentIndex ? 1 : 0 }}
+          transition={{ duration: 0.8 }}
+        />
+      ))}
+      
+      {/* Slide indicators */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+              index === currentIndex ? 'bg-white' : 'bg-white/40'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const Hero: React.FC = () => {
   const { language, isRTL } = useLanguage();
   const copy = COPY[language];
