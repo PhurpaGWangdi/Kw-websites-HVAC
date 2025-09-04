@@ -3,13 +3,18 @@ import { Snowflake, Flame, Fan, Building2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { CONFIG, COPY } from '../config/brand';
+import heroImg from "../assets/hero.jpg";
+import coolingImg from "../assets/cooling.jpg";
+import heatingImg from "../assets/heating.jpg";
+import maintenanceImg from "../assets/maintenance.jpg";
+import commercialImg from "../assets/commercial.jpg";
 
 const IMAGES = {
-  hero: "/images/hero.jpg",
-  cooling: "/images/cooling.jpg",
-  heating: "/images/heating.jpg",
-  maintenance: "/images/maintenance.jpg",
-  commercial: "/images/commercial.jpg",
+  hero: heroImg,
+  cooling: coolingImg,
+  heating: heatingImg,
+  maintenance: maintenanceImg,
+  commercial: commercialImg,
 };
 
 const Services: React.FC = () => {
