@@ -22,8 +22,14 @@ const AppContent: React.FC = () => {
   const { language } = useLanguage();
 
   useEffect(() => {
+    const container = document.createElement("div");
+    container.id = "VG_OVERLAY_CONTAINER";
+    container.style.width = "0";
+    container.style.height = "0";
+    document.body.appendChild(container);
+
     (window as any).VG_CONFIG = {
-      ID: "yhy7drwv11xp9pm1",
+      ID: "qaIPIrANlje3x2N9",
       region: 'na',
       render: 'bottom-right',
       stylesheets: [
@@ -35,12 +41,6 @@ const AppContent: React.FC = () => {
     script.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
     script.defer = true;
     document.body.appendChild(script);
-
-    const container = document.createElement("div");
-    container.id = "VG_OVERLAY_CONTAINER";
-    container.style.width = "0";
-    container.style.height = "0";
-    document.body.appendChild(container);
 
     return () => {
       if (script.parentNode) {

@@ -100,14 +100,10 @@ const Services: React.FC = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <FeatureCard 
+              <FeatureCard
                 icon={<service.icon className={`w-8 h-8 ${service.color}`} />}
                 title={service.title}
                 desc={service.description}
-                image={IMAGES.commercial}
-                image={IMAGES.maintenance}
-                image={IMAGES.heating}
-                image={IMAGES.cooling}
                 image={service.image}
               />
             </motion.div>
