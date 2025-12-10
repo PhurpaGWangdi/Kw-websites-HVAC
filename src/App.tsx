@@ -22,30 +22,32 @@ const AppContent: React.FC = () => {
   const { language } = useLanguage();
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.onload = () => {
-      if ((window as any).voiceflow) {
-        (window as any).voiceflow.chat.load({
-          verify: { projectID: '693674b9761094c4c1239952' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production',
-          voice: {
-            url: "https://runtime-api.voiceflow.com"
-          }
-        });
-      }
-    };
-    script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+    const container = document.createElement("div");
+    container.id = "VG_OVERLAY_CONTAINER";
+    container.style.width = "0";
+    container.style.height = "0";
+    document.body.appendChild(container);
 
-    const firstScript = document.getElementsByTagName("script")[0];
-    if (firstScript && firstScript.parentNode) {
-      firstScript.parentNode.insertBefore(script, firstScript);
-    }
+    (window as any).VG_CONFIG = {
+      ID: "qaIPIrANlje3x2N9",
+      region: 'na',
+      render: 'bottom-right',
+      stylesheets: [
+        "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
+      ],
+    };
+
+    const script = document.createElement("script");
+    script.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+    script.defer = true;
+    document.body.appendChild(script);
 
     return () => {
       if (script.parentNode) {
         script.parentNode.removeChild(script);
+      }
+      if (container.parentNode) {
+        container.parentNode.removeChild(container);
       }
     };
   }, []);
